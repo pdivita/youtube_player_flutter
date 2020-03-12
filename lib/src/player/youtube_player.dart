@@ -232,7 +232,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
       } else {
         controller.pause();
         var _cachedPosition = controller.value.position;
-        var _videoId = controller.metadata.videoId;
+        var _videoId = controller.initialVideoId; // controller.metadata.videoId;
         _cachedWebController = controller.value.webViewController;
         controller.reset();
 
@@ -317,6 +317,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                       fontWeight: FontWeight.w300,
                     ),
                   ),
+				  FullScreenButton(),
                 ],
               ),
             ),
